@@ -1,174 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Template</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-
-      header {
-        background-color: #f0f0f0;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        max-width: 250px;
-      }
-
-      nav {
-        display: flex;
-        align-items: center;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-      }
-
-      nav li {
-        margin-right: 20px;
-      }
-
-      .menu-icon {
-        display: none;
-        cursor: pointer;
-      }
-
-      .main {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .column {
-        flex-basis: 33.33%;
-        padding: 20px;
-        box-sizing: border-box;
-      }
-
-      footer {
-        background-color: #f0f0f0;
-        padding: 10px;
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      footer .footer-column {
-        flex-basis: 50%;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-
-      /* Media queries for responsive design */
-
-      @media only screen and (max-width: 768px) {
-        .menu {
-          display: none;
-        }
-
-        .menu-icon {
-          display: block;
-        }
-
-        header {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        nav {
-          margin-top: 10px;
-        }
-
-        nav ul {
-          display: none;
-          flex-direction: column;
-          align-items: center;
-          margin-top: 10px;
-        }
-
-        nav ul.active {
-          display: flex;
-        }
-
-        .main {
-          flex-direction: column;
-        }
-
-        .column {
-          flex-basis: 100%;
-          text-align: center;
-        }
-
-        /* Fix for burger menu */
-        .menu-icon {
-          order: 2;
-        }
-
-        nav {
-          order: 1;
-          width: 100%;
-        }
-
-        /* Fix for menu not clickable */
-        nav li {
-          margin-right: 0;
-          margin-bottom: 10px;
-        }
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <header>
+    <!-- Navbar -->
+    <header class="navbar">
       <div class="logo">
-        <!-- Replace the src attribute with your logo image URL -->
-        <img src="logo.png" alt="Logo" />
+        <a href="#">Logo</a>
       </div>
-      <nav>
-        <div class="menu">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>
-        <div class="menu-icon">
-          <!-- You can use any suitable burger icon here -->
-          &#9776;
-        </div>
+      <nav class="navbar-menu" id="navbar-menu">
+        <a href="#" class="navbar-item">Home</a>
+        <a href="#" class="navbar-item">About</a>
+        <a href="#" class="navbar-item">Services</a>
+        <a href="#" class="navbar-item">Contact</a>
+        <a href="#" class="navbar-item">Blog</a>
       </nav>
+      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     </header>
 
-    <main class="main">
-      <div class="column">
-        <!-- Content for column 1 -->
-        <h2>Column 1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="column">
-        <!-- Content for column 2 -->
-        <h2>Column 2</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div class="column">
-        <!-- Content for column 3 -->
-        <h2>Column 3</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="mySidebar">
+      <a href="javascript:void(0)" onclick="w3_close()" class="close-icon">
+        &times;
+      </a>
+      <h4 class="sidebar-header">Menu</h4>
+      <a class="sidebar-item" href="#">Home</a>
+      <a class="sidebar-item" href="#">About</a>
+      <a class="sidebar-item" href="#">Services</a>
+      <a class="sidebar-item" href="#">Contact</a>
+      <a class="sidebar-item" href="#">Blog</a>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="overlay" onclick="w3_close()" id="myOverlay"></div>
+
+    <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+    <main class="main" id="main-content">
+      <div class="flex-container">
+        <div class="column">
+          <!-- Content for column 1 -->
+          <h2>Column 1</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            accumsan libero id risus sagittis, vitae laoreet odio vestibulum.
+          </p>
+        </div>
+        <div class="column">
+          <!-- Content for column 2 -->
+          <h2>Column 2</h2>
+          <p>
+            Nullam tristique magna ac tellus elementum cursus. Proin dapibus, mi
+            vel facilisis efficitur, dolor metus facilisis erat, ut hendrerit
+            sem quam ac risus.
+          </p>
+        </div>
+        <div class="column">
+          <!-- Content for column 3 -->
+          <h2>Column 3</h2>
+          <p>
+            Aenean nec justo ac velit facilisis ultrices. Pellentesque habitant
+            morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas.
+          </p>
+        </div>
       </div>
     </main>
 
-    <footer>
+    <footer class="footer">
       <div class="footer-column">
         <!-- Content for footer column 1 -->
         <p>Footer Column 1</p>

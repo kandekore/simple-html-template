@@ -1,0 +1,157 @@
+/* Your custom CSS styles here */
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4caf50;
+  padding: 10px;
+  color: white;
+  position: relative;
+}
+
+.navbar .logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.navbar-menu {
+  display: flex;
+}
+
+.navbar-item {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  z-index: 1;
+  display: none;
+}
+
+.sidebar-header {
+  margin-top: 0;
+}
+
+.sidebar-item {
+  display: block;
+  padding: 8px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.close-icon {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* Overlay styles */
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* Media query for showing/hiding burger menu */
+@media only screen and (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .sidebar {
+    display: block;
+  }
+}
+
+/* Additional styles for the main content area */
+.main {
+  margin-left: 0;
+  padding: 20px;
+}
+
+/* Flex container for main content */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Columns for main content */
+.column {
+  flex-basis: 25%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Footer styles */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4caf50;
+  padding: 10px;
+  color: white;
+}
+
+.footer-column {
+  flex-basis: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Add mobile styles */
+@media only screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .column {
+    flex-basis: 100%;
+  }
+  .footer {
+    flex-wrap: wrap;
+  }
+  .footer-column {
+    flex-basis: 100%;
+  }
+  /* Hide the sidebar on load for mobile */
+  .sidebar {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+}

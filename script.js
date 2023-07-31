@@ -1,8 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const menuIcon = document.querySelector(".menu-icon");
-  const nav = document.querySelector("nav ul");
+// Script.js
+function toggleMenu() {
+  const sidebar = document.getElementById("mySidebar");
+  const overlay = document.getElementById("myOverlay");
+  const mainContent = document.getElementById("main-content");
 
-  menuIcon.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-});
+  if (sidebar.style.display === "block") {
+    sidebar.style.display = "none";
+    overlay.style.display = "none";
+  } else {
+    sidebar.style.display = "block";
+    overlay.style.display = "block";
+  }
+}
+
+function w3_close() {
+  const sidebar = document.getElementById("mySidebar");
+  const overlay = document.getElementById("myOverlay");
+
+  sidebar.style.display = "none";
+  overlay.style.display = "none";
+}
