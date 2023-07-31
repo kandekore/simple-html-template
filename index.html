@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Template</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #f0f0f0;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        max-width: 250px;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+
+      .menu-icon {
+        display: none;
+        cursor: pointer;
+      }
+
+      .main {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .column {
+        flex-basis: 33.33%;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      footer {
+        background-color: #f0f0f0;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      footer .footer-column {
+        flex-basis: 50%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      /* Media queries for responsive design */
+
+      @media only screen and (max-width: 768px) {
+        .menu {
+          display: none;
+        }
+
+        .menu-icon {
+          display: block;
+        }
+
+        header {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav {
+          margin-top: 10px;
+        }
+
+        nav ul {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 10px;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        .main {
+          flex-direction: column;
+        }
+
+        .column {
+          flex-basis: 100%;
+          text-align: center;
+        }
+
+        /* Fix for burger menu */
+        .menu-icon {
+          order: 2;
+        }
+
+        nav {
+          order: 1;
+          width: 100%;
+        }
+
+        /* Fix for menu not clickable */
+        nav li {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <!-- Replace the src attribute with your logo image URL -->
+        <img src="logo.png" alt="Logo" />
+      </div>
+      <nav>
+        <div class="menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="menu-icon">
+          <!-- You can use any suitable burger icon here -->
+          &#9776;
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <div class="column">
+        <!-- Content for column 1 -->
+        <h2>Column 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="column">
+        <!-- Content for column 2 -->
+        <h2>Column 2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="column">
+        <!-- Content for column 3 -->
+        <h2>Column 3</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-column">
+        <!-- Content for footer column 1 -->
+        <p>Footer Column 1</p>
+      </div>
+      <div class="footer-column">
+        <!-- Content for footer column 2 -->
+        <p>Footer Column 2</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
